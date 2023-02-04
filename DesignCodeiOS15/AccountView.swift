@@ -34,8 +34,14 @@ struct AccountView: View {
                 .padding()
                 .background(Circle().fill(.ultraThinMaterial))
                 .background(
-                    HexagonView()
-                        .offset(x: -50, y: -100)
+                    BlobView()
+                        .offset(x: 300, y: 0)
+                        .scaleEffect(0.8)
+                )
+                .background(
+                    BlobView()
+                        .offset(x: -300, y: 0)
+                        .scaleEffect(0.8)
                 )
             Text("Vlad Chuvashov")
                 .font(.title.weight(.semibold))
