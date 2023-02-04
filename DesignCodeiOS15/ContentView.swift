@@ -40,7 +40,7 @@ struct ContentView: View {
         .shadow(color: Color.ShadowColor.opacity(0.3), radius: 10, x: 0, y: 10)
         .overlay {
             RoundedRectangle(cornerRadius: 30.0, style: .continuous)
-                .stroke(.linearGradient(colors: [.white.opacity(0.2), .black.opacity(0.1)], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .stroke(.linearGradient(colors: [.white.opacity(0.3), .black.opacity(0.1)], startPoint: .topLeading, endPoint: .bottomTrailing))
         }
         .padding(.horizontal, 20.0)
         .background(
