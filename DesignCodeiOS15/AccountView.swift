@@ -36,12 +36,7 @@ struct AccountView: View {
                 .background(
                     BlobView()
                         .offset(x: 300, y: 0)
-                        .scaleEffect(0.8)
-                )
-                .background(
-                    BlobView()
-                        .offset(x: -300, y: 0)
-                        .scaleEffect(0.8)
+                        .scaleEffect(0.5)
                 )
             Text("Vlad Chuvashov")
                 .font(.title.weight(.semibold))
