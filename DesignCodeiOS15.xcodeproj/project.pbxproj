@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84034423298EB5D100153A6F /* HexagonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84034422298EB5D100153A6F /* HexagonView.swift */; };
+		84034425298EBFFE00153A6F /* BlobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84034424298EBFFE00153A6F /* BlobView.swift */; };
 		84216DCB298D8EB10040D80E /* DesignCodeiOS15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */; };
 		84216DCD298D8EB10040D80E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DCC298D8EB10040D80E /* ContentView.swift */; };
 		84216DCF298D8EB30040D80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84216DCE298D8EB30040D80E /* Assets.xcassets */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84034422298EB5D100153A6F /* HexagonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexagonView.swift; sourceTree = "<group>"; };
+		84034424298EBFFE00153A6F /* BlobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlobView.swift; sourceTree = "<group>"; };
 		84216DC7298D8EB10040D80E /* DesignCodeiOS15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeiOS15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeiOS15App.swift; sourceTree = "<group>"; };
 		84216DCC298D8EB10040D80E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,9 +67,9 @@
 			children = (
 				84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */,
 				84216DCC298D8EB10040D80E /* ContentView.swift */,
+				84216DFA298E9EB40040D80E /* AccountView.swift */,
 				84216DCE298D8EB30040D80E /* Assets.xcassets */,
 				84216DD0298D8EB30040D80E /* Preview Content */,
-				84216DFA298E9EB40040D80E /* AccountView.swift */,
 			);
 			path = DesignCodeiOS15;
 			sourceTree = "<group>";
@@ -91,6 +95,8 @@
 			isa = PBXGroup;
 			children = (
 				84216DF5298E70A50040D80E /* Styles.swift */,
+				84034422298EB5D100153A6F /* HexagonView.swift */,
+				84034424298EBFFE00153A6F /* BlobView.swift */,
 			);
 			name = CustomElements;
 			sourceTree = "<group>";
@@ -166,7 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84216DFB298E9EB40040D80E /* AccountView.swift in Sources */,
+				84034423298EB5D100153A6F /* HexagonView.swift in Sources */,
 				84216DCD298D8EB10040D80E /* ContentView.swift in Sources */,
+				84034425298EBFFE00153A6F /* BlobView.swift in Sources */,
 				84216DCB298D8EB10040D80E /* DesignCodeiOS15App.swift in Sources */,
 				84216DDA298E4BF30040D80E /* Color + Extention.swift in Sources */,
 				84216DF9298E74040040D80E /* View + Extension.swift in Sources */,
