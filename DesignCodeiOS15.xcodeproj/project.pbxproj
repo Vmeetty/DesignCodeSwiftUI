@@ -14,6 +14,7 @@
 		84216DDA298E4BF30040D80E /* Color + Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DD9298E4BF30040D80E /* Color + Extention.swift */; };
 		84216DF6298E70A50040D80E /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DF5298E70A50040D80E /* Styles.swift */; };
 		84216DF9298E74040040D80E /* View + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DF8298E74040040D80E /* View + Extension.swift */; };
+		84216DFB298E9EB40040D80E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DFA298E9EB40040D80E /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		84216DD9298E4BF30040D80E /* Color + Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color + Extention.swift"; sourceTree = "<group>"; };
 		84216DF5298E70A50040D80E /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		84216DF8298E74040040D80E /* View + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extension.swift"; sourceTree = "<group>"; };
+		84216DFA298E9EB40040D80E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				84216DCC298D8EB10040D80E /* ContentView.swift */,
 				84216DCE298D8EB30040D80E /* Assets.xcassets */,
 				84216DD0298D8EB30040D80E /* Preview Content */,
+				84216DFA298E9EB40040D80E /* AccountView.swift */,
 			);
 			path = DesignCodeiOS15;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84216DFB298E9EB40040D80E /* AccountView.swift in Sources */,
 				84216DCD298D8EB10040D80E /* ContentView.swift in Sources */,
 				84216DCB298D8EB10040D80E /* DesignCodeiOS15App.swift in Sources */,
 				84216DDA298E4BF30040D80E /* Color + Extention.swift in Sources */,
