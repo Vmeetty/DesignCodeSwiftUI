@@ -8,25 +8,27 @@
 import SwiftUI
 
 struct FeaturedItem: View {
+    var course: Course = courses[0]
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 8.0) {
             Spacer()
-            Image("Logo 2")
+            Image(course.logo)
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 26.0, height: 26.0)
                 .cornerRadius(20.0)
                 .padding(9.0)
                 .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 20, style: .continuous))
-            Text("SwiftUI for iOS15")
+            Text(course.title)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .foregroundStyle(.linearGradient(colors: [.primary, .primary.opacity(0.5)], startPoint: .topLeading, endPoint: .bottomTrailing))
-            Text("20 sections - 3 hours".uppercased())
+            Text(course.subtitle.uppercased())
                 .font(.footnote)
                 .fontWeight(.semibold)
                 .foregroundStyle(.secondary)
-            Text("Build an iOS app for iOS 15 with custom layouts, animations and ...")
+            Text(course.text)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .lineLimit(2)
@@ -36,21 +38,12 @@ struct FeaturedItem: View {
         .padding(.all, 20.0)
         .padding(.vertical, 20.0)
         .frame(height: 350.0)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30.0, style: .continuous))
-        .shadow(color: Color.ShadowColor.opacity(0.3), radius: 10, x: 0, y: 10)
+        .background(.ultraThinMaterial)
+        .mask({
+            RoundedRectangle(cornerRadius: 30.0, style: .continuous)
+        })
         .strokeStyle()
         .padding(.horizontal, 20.0)
-        .background(
-            Image("Blob 1")
-                .offset(x: 250, y: -100)
-        )
-        .overlay {
-            Image("Illustration 2")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(height: 230)
-                .offset(x: 32, y: -80)
-        }
     }
 }
 
