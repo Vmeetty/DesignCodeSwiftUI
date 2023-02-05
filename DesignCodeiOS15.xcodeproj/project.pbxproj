@@ -18,6 +18,7 @@
 		84034438299005D200153A6F /* PreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84034437299005D200153A6F /* PreferenceKeys.swift */; };
 		8403443A2990108500153A6F /* AnimatbleFontModifire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840344392990108500153A6F /* AnimatbleFontModifire.swift */; };
 		8403443C2990205D00153A6F /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403443B2990205D00153A6F /* Course.swift */; };
+		8403443E29902FAC00153A6F /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403443D29902FAC00153A6F /* MatchedView.swift */; };
 		84216DCB298D8EB10040D80E /* DesignCodeiOS15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */; };
 		84216DCD298D8EB10040D80E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DCC298D8EB10040D80E /* ContentView.swift */; };
 		84216DCF298D8EB30040D80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84216DCE298D8EB30040D80E /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 		84034437299005D200153A6F /* PreferenceKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeys.swift; sourceTree = "<group>"; };
 		840344392990108500153A6F /* AnimatbleFontModifire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatbleFontModifire.swift; sourceTree = "<group>"; };
 		8403443B2990205D00153A6F /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		8403443D29902FAC00153A6F /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedView.swift; sourceTree = "<group>"; };
 		84216DC7298D8EB10040D80E /* DesignCodeiOS15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeiOS15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeiOS15App.swift; sourceTree = "<group>"; };
 		84216DCC298D8EB10040D80E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				8403442D298FDD4B00153A6F /* HomeView.swift */,
 				84216DFA298E9EB40040D80E /* AccountView.swift */,
+				8403443D29902FAC00153A6F /* MatchedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 				8403442C298FCFE800153A6F /* TabItemPreferenceKey.swift in Sources */,
 				8403443C2990205D00153A6F /* Course.swift in Sources */,
 				84216DCD298D8EB10040D80E /* ContentView.swift in Sources */,
+				8403443E29902FAC00153A6F /* MatchedView.swift in Sources */,
 				84034425298EBFFE00153A6F /* BlobView.swift in Sources */,
 				84034438299005D200153A6F /* PreferenceKeys.swift in Sources */,
 				84034434298FEEF300153A6F /* FeaturedItem.swift in Sources */,
