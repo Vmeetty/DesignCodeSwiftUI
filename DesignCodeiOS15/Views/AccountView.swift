@@ -54,12 +54,12 @@ struct AccountView: View {
     var menu: some View {
         Section {
             NavigationLink {
-                ContentView()
+                HomeView()
             } label: {
                 Label("Settings", systemImage: "gear")
             }
             NavigationLink {
-                ContentView()
+                HomeView()
             } label: {
                 Label("Billing", systemImage: "creditcard")
             }
