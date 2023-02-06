@@ -23,6 +23,7 @@
 		840344422990F1CC00153A6F /* CourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840344412990F1CC00153A6F /* CourseItem.swift */; };
 		840344442990F2C400153A6F /* CourseDetaileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840344432990F2C400153A6F /* CourseDetaileView.swift */; };
 		840344482991062200153A6F /* Animation + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840344472991062200153A6F /* Animation + Extension.swift */; };
+		8403444A29915BB400153A6F /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403444929915BB400153A6F /* Model.swift */; };
 		84216DCB298D8EB10040D80E /* DesignCodeiOS15App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */; };
 		84216DCD298D8EB10040D80E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DCC298D8EB10040D80E /* ContentView.swift */; };
 		84216DCF298D8EB30040D80E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84216DCE298D8EB30040D80E /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		840344412990F1CC00153A6F /* CourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseItem.swift; sourceTree = "<group>"; };
 		840344432990F2C400153A6F /* CourseDetaileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetaileView.swift; sourceTree = "<group>"; };
 		840344472991062200153A6F /* Animation + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation + Extension.swift"; sourceTree = "<group>"; };
+		8403444929915BB400153A6F /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		84216DC7298D8EB10040D80E /* DesignCodeiOS15.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesignCodeiOS15.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84216DCA298D8EB10040D80E /* DesignCodeiOS15App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignCodeiOS15App.swift; sourceTree = "<group>"; };
 		84216DCC298D8EB10040D80E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				84034429298EF98F00153A6F /* TabBarItemModel.swift */,
 				84034437299005D200153A6F /* PreferenceKeys.swift */,
 				8403443B2990205D00153A6F /* Course.swift */,
+				8403444929915BB400153A6F /* Model.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				84034438299005D200153A6F /* PreferenceKeys.swift in Sources */,
 				840344422990F1CC00153A6F /* CourseItem.swift in Sources */,
 				84034434298FEEF300153A6F /* FeaturedItem.swift in Sources */,
+				8403444A29915BB400153A6F /* Model.swift in Sources */,
 				8403443A2990108500153A6F /* AnimatbleFontModifire.swift in Sources */,
 				84216DCB298D8EB10040D80E /* DesignCodeiOS15App.swift in Sources */,
 				84216DDA298E4BF30040D80E /* Color + Extention.swift in Sources */,

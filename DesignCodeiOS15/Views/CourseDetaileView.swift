@@ -12,6 +12,7 @@ struct CourseDetaileView: View {
     var course: Course = courses[0]
     @Binding var show: Bool
     @State var appear = [false, false, false]
+    @EnvironmentObject var model: Model
     
     var body: some View {
         ZStack {
@@ -111,6 +112,7 @@ struct CourseDetaileView: View {
         Button {
             withAnimation(.closeCard) {
                 show.toggle()
+                model.showDetail = false
             }
         } label: {
             Image(systemName: "xmark")
@@ -163,5 +165,6 @@ struct CourseDetaoleView_Previews: PreviewProvider {
     
     static var previews: some View {
         CourseDetaileView(namespace: namespace, show: .constant(true))
+            .environmentObject(Model())
     }
 }
