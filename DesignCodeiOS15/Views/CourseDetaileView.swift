@@ -18,6 +18,7 @@ struct CourseDetaileView: View {
         ZStack {
             ScrollView {
                 cover
+                    .frame(height: 500)
                 
                 content
                     .offset(y: 120)
@@ -30,82 +31,49 @@ struct CourseDetaileView: View {
             closeButton
         }
         .onAppear {
-            fadeIn()
+            userInfofadeIn()
         }
-//        .onChange(of: show) { newValue in
-//            faseOut()
-//        }
+        //        .onChange(of: show) { newValue in
+        //            faseOut()
+        //        }
     }
     
     var cover: some View {
-        VStack {
-            Spacer()
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: 500)
-        .foregroundColor(.black)
-        .background(
-            Image(course.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .matchedGeometryEffect(id: "image\(course.id)", in: namespace)
-        )
-        .background(
-            Image(course.background)
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .matchedGeometryEffect(id: "background\(course.id)", in: namespace)
-        )
-        .mask {
-            RoundedRectangle(cornerRadius: 30, style: .continuous)
-                .matchedGeometryEffect(id: "mask\(course.id)", in: namespace)
-        }
-        .overlay(content: {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(course.title)
-                    .font(.largeTitle.weight(.bold))
-                    .matchedGeometryEffect(id: "title\(course.id)", in: namespace)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                Text(course.subtitle.uppercased())
-                    .font(.footnote.weight(.semibold))
-                    .matchedGeometryEffect(id: "subtitle\(course.id)", in: namespace)
-                Text(course.text)
-                    .font(.footnote)
-                    .matchedGeometryEffect(id: "text\(course.id)", in: namespace)
-                Divider()
-                    .opacity(appear[0] ? 1 : 0)
-                    .matchedGeometryEffect(id: "divider\(course.id)", in: namespace)
-                HStack {
-                    Image("Avatar Default")
-                        .resizable()
-                        .frame(width: 26, height: 26)
-                        .cornerRadius(10)
-                        .padding(8)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                        .strokeStyle(cornerRadius: 18)
-                    Text("Vlad Chuvashov")
-                        .font(.footnote)
-                }
-                .opacity(appear[1] ? 1 : 0)
-                .matchedGeometryEffect(id: "nameAndAvatar\(course.id)", in: namespace)
+        GeometryReader { proxy in
+            let scrollY = proxy.frame(in: .global).minY
+            
+            VStack {
+                Spacer()
             }
-            .padding(20)
+            .frame(maxWidth: .infinity)
+            .frame(height: scrollY > 0 ? 500 + scrollY : 500)
+            .foregroundColor(.black)
             .background(
-                Rectangle()
-                    .fill(.ultraThinMaterial)
-                    .mask({
-                        RoundedRectangle(cornerRadius: 30, style: .continuous)
-                    })
-                    .matchedGeometryEffect(id: "blur\(course.id)", in: namespace)
+                Image(course.image)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .matchedGeometryEffect(id: "image\(course.id)", in: namespace)
+                    .offset(y: scrollY > 0 ? scrollY * -0.8 : scrollY / 5)
             )
-            //                        .background(
-            //                            RoundedRectangle(cornerRadius: 30, style: .continuous)
-            //                                .fill(.ultraThinMaterial)
-            //                                .matchedGeometryEffect(id: "blur", in: namespace)
-            //                        )
-            .offset(y: 250)
-            .padding(20)
-        })
+            .background(
+                Image(course.background)
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .matchedGeometryEffect(id: "background\(course.id)", in: namespace)
+                    .offset(y: scrollY > 0 ? -scrollY : 0)
+                    .scaleEffect(scrollY > 0 ? scrollY / 1000 + 1 : 1)
+                    .blur(radius: scrollY / 10)
+            )
+            .mask {
+                RoundedRectangle(cornerRadius: 30, style: .continuous)
+                    .matchedGeometryEffect(id: "mask\(course.id)", in: namespace)
+                    .offset(y: scrollY > 0 ? -scrollY : 0)
+            }
+            .overlay(content: {
+                overlayContent
+                    .offset(y: scrollY > 0 ? scrollY * -0.4 : 0)
+            })
+        }
     }
     
     var closeButton: some View {
@@ -141,7 +109,54 @@ struct CourseDetaileView: View {
         .padding(20)
     }
     
-    private func fadeIn() {
+    var overlayContent: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text(course.title)
+                .font(.largeTitle.weight(.bold))
+                .matchedGeometryEffect(id: "title\(course.id)", in: namespace)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Text(course.subtitle.uppercased())
+                .font(.footnote.weight(.semibold))
+                .matchedGeometryEffect(id: "subtitle\(course.id)", in: namespace)
+            Text(course.text)
+                .font(.footnote)
+                .matchedGeometryEffect(id: "text\(course.id)", in: namespace)
+            Divider()
+                .opacity(appear[0] ? 1 : 0)
+                .matchedGeometryEffect(id: "divider\(course.id)", in: namespace)
+            HStack {
+                Image("Avatar Default")
+                    .resizable()
+                    .frame(width: 26, height: 26)
+                    .cornerRadius(10)
+                    .padding(8)
+                    .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
+                    .strokeStyle(cornerRadius: 18)
+                Text("Vlad Chuvashov")
+                    .font(.footnote)
+            }
+            .opacity(appear[1] ? 1 : 0)
+            .matchedGeometryEffect(id: "nameAndAvatar\(course.id)", in: namespace)
+        }
+        .padding(20)
+        .background(
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .mask({
+                    RoundedRectangle(cornerRadius: 30, style: .continuous)
+                })
+                .matchedGeometryEffect(id: "blur\(course.id)", in: namespace)
+        )
+        //                        .background(
+        //                            RoundedRectangle(cornerRadius: 30, style: .continuous)
+        //                                .fill(.ultraThinMaterial)
+        //                                .matchedGeometryEffect(id: "blur", in: namespace)
+        //                        )
+        .offset(y: 250)
+        .padding(20)
+    }
+    
+    private func userInfofadeIn() {
         withAnimation(.easeOut.delay(0.3)) {
             appear[0] = true
         }
