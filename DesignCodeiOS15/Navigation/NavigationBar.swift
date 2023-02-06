@@ -19,7 +19,6 @@ struct NavigationBar: View {
                 .opacity(hasScrolled ? 1 : 0)
             Text(title)
                 .animatbleFont(size: hasScrolled ? 22 : 34, weight: .bold)
-//                .font(.largeTitle.weight(.bold))
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 20)
                 .padding(.top, 20)
@@ -31,6 +30,7 @@ struct NavigationBar: View {
                     .foregroundColor(.secondary)
                     .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .strokeStyle(cornerRadius: 14)
+                
                 AvatarView()
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
