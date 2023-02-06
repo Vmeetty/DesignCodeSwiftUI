@@ -14,6 +14,7 @@ struct CourseDetaileView: View {
     @State var appear = [false, false, false]
     @EnvironmentObject var model: Model
     @State var viewState: CGSize = .zero
+    @State var isDragble = true
     
     var body: some View {
         ZStack {
@@ -34,19 +35,7 @@ struct CourseDetaileView: View {
             .scaleEffect(viewState.width / -500 + 1)
             .background(.black.opacity(viewState.width / 500))
             .background(.ultraThinMaterial)
-            .gesture(
-                DragGesture()
-                    .onChanged({ newValue in
-                        guard newValue.translation.width > 0 else { return }
-                        viewState = newValue.translation
-                    })
-                    .onEnded({ newValue in
-                        withAnimation(.closeCard) {
-                            viewState = .zero
-                        }
-                    })
-                    
-            )
+            .gesture(isDragble ? drag : nil)
             .ignoresSafeArea()
             
             closeButton
@@ -175,6 +164,35 @@ struct CourseDetaileView: View {
         //                        )
         .offset(y: 250)
         .padding(20)
+    }
+    
+    var drag: some Gesture {
+        DragGesture()
+            .onChanged({ newValue in
+                guard newValue.translation.width > 0 else { return }
+                viewState = newValue.translation
+            })
+            .onEnded({ newValue in
+                if viewState.width > 80 {
+                    close()
+                } else {
+                    withAnimation(.closeCard) {
+                        viewState = .zero
+                    }
+                }
+            })
+    }
+    
+    private func close() {
+        withAnimation(.closeCard.delay(0.1)) {
+            show.toggle()
+            model.showDetail = false
+        }
+        withAnimation(.closeCard) {
+            viewState = .zero
+        }
+        
+        isDragble = false
     }
     
     private func userInfofadeIn() {
