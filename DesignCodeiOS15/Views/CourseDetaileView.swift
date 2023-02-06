@@ -13,6 +13,7 @@ struct CourseDetaileView: View {
     @Binding var show: Bool
     @State var appear = [false, false, false]
     @EnvironmentObject var model: Model
+    @State var viewState: CGSize = .zero
     
     var body: some View {
         ZStack {
@@ -26,6 +27,26 @@ struct CourseDetaileView: View {
                     .opacity(appear[2] ? 1 : 0)
             }
             .background(Color("Background"))
+            .mask({
+                RoundedRectangle(cornerRadius: viewState.width / 3, style: .continuous)
+            })
+            .shadow(color: .black.opacity(0.3), radius: 30, x: 0, y: 10)
+            .scaleEffect(viewState.width / -500 + 1)
+            .background(.black.opacity(viewState.width / 500))
+            .background(.ultraThinMaterial)
+            .gesture(
+                DragGesture()
+                    .onChanged({ newValue in
+                        guard newValue.translation.width > 0 else { return }
+                        viewState = newValue.translation
+                    })
+                    .onEnded({ newValue in
+                        withAnimation(.closeCard) {
+                            viewState = .zero
+                        }
+                    })
+                    
+            )
             .ignoresSafeArea()
             
             closeButton
