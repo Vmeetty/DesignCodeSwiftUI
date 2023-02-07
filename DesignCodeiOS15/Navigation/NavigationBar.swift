@@ -10,6 +10,7 @@ import SwiftUI
 struct NavigationBar: View {
     @Binding var hasScrolled: Bool
     @State var showSerch = false
+    @State var showAccount = false
     var title = ""
     
     var body: some View {
@@ -39,7 +40,14 @@ struct NavigationBar: View {
                     SearchView()
                 }
                 
-                AvatarView()
+                Button {
+                    showAccount = true
+                } label: {
+                    AvatarView()
+                }
+                .sheet(isPresented: $showAccount) {
+                    AccountView()
+                }
             }
             .frame(maxWidth: .infinity, alignment: .trailing)
             .padding(.trailing, 20)

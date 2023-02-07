@@ -11,6 +11,7 @@ struct AccountView: View {
     
     @State var webIsDeleted = false
     @State var youtubeIsDeleted = false
+    @Environment(\.dismiss) var dismiss
     
     var body: some View {
         NavigationView {
@@ -21,6 +22,16 @@ struct AccountView: View {
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        dismiss.callAsFunction()
+                    } label: {
+                        Text("Done")
+                    }
+
+                }
+            }
         }
     }
     
