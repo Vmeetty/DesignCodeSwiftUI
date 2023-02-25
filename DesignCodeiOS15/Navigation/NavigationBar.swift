@@ -11,6 +11,7 @@ struct NavigationBar: View {
     @Binding var hasScrolled: Bool
     @State var showSerch = false
     @State var showAccount = false
+    @AppStorage("showModal") var showModal = false
     var title = ""
     
     var body: some View {
@@ -41,7 +42,10 @@ struct NavigationBar: View {
                 }
                 
                 Button {
-                    showAccount = true
+                    withAnimation {
+                        showModal = true
+                    }
+//                    showAccount = true
                 } label: {
                     AvatarView()
                 }

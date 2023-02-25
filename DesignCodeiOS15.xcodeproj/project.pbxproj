@@ -34,6 +34,7 @@
 		84216DF6298E70A50040D80E /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DF5298E70A50040D80E /* Styles.swift */; };
 		84216DF9298E74040040D80E /* View + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DF8298E74040040D80E /* View + Extension.swift */; };
 		84216DFB298E9EB40040D80E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DFA298E9EB40040D80E /* AccountView.swift */; };
+		84C4F88E29AA71CD0076FBBC /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C4F88D29AA71CD0076FBBC /* SignUpView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		84216DF5298E70A50040D80E /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		84216DF8298E74040040D80E /* View + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extension.swift"; sourceTree = "<group>"; };
 		84216DFA298E9EB40040D80E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		84C4F88D29AA71CD0076FBBC /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				8403443D29902FAC00153A6F /* MatchedView.swift */,
 				8403444D299249D100153A6F /* SearchView.swift */,
 				840344432990F2C400153A6F /* CourseDetaileView.swift */,
+				84C4F88D29AA71CD0076FBBC /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				8403442C298FCFE800153A6F /* TabItemPreferenceKey.swift in Sources */,
 				8403443C2990205D00153A6F /* Course.swift in Sources */,
 				84216DCD298D8EB10040D80E /* ContentView.swift in Sources */,
+				84C4F88E29AA71CD0076FBBC /* SignUpView.swift in Sources */,
 				8403443E29902FAC00153A6F /* MatchedView.swift in Sources */,
 				8403444029905F9000153A6F /* AvatarView.swift in Sources */,
 				84034425298EBFFE00153A6F /* BlobView.swift in Sources */,
@@ -337,7 +341,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -391,7 +395,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
