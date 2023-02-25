@@ -20,7 +20,9 @@ struct SignUpView: View {
                 Text("Create account")
                     .frame(maxWidth: .infinity)
             }
-            .buttonStyle(.bordered)
+            .font(.headline)
+            .blendMode(.overlay)
+            .buttonStyle(.angular)
             .tint(.accentColor)
             .controlSize(.large)
         }
