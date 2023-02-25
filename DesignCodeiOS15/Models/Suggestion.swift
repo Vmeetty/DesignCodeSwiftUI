@@ -12,8 +12,8 @@ struct Suggestion: Identifiable {
     var text: String
 }
 
-let suggestions = [
-    Suggestion(text: "SWift"),
+let suggestionsData = [
+    Suggestion(text: "Swift"),
     Suggestion(text: "React"),
     Suggestion(text: "Design")
 ]

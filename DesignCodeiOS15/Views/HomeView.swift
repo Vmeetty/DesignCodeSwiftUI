@@ -12,7 +12,9 @@ struct HomeView: View {
     @Namespace var namespace
     @State var show = false
     @State var showStatusBar = true
-    @State var selectedItemId = UUID()
+    @State var selectedCourse = courses[0]
+    @State var selectedFeaturedCourse = featuredCourses[0]
+    @State var showFeaturedCourse = false
     @EnvironmentObject var model: Model
     
     var body: some View {
@@ -33,12 +35,12 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                 
                 if !show {
-                    ForEach(courses) { courses in
-                        CourseItem(namespace: namespace, course: courses, show: $show)
+                    ForEach(courses) { course in
+                        CourseItem(namespace: namespace, course: course, show: $show)
                             .onTapGesture {
                                 withAnimation(.openCard) {
                                     show.toggle()
-                                    selectedItemId = courses.id
+                                    selectedCourse = course
                                     model.showDetail = true
                                 }
                             }
@@ -66,8 +68,8 @@ struct HomeView: View {
             
             if show {
                 ForEach(courses) { course in
-                    if selectedItemId == course.id {
-                        CourseDetaileView(namespace: namespace, course: course, show: $show)
+                    if selectedCourse.id == course.id {
+                        CourseDetaileView(namespace: namespace, course: $selectedCourse, show: $show)
                             .zIndex(1)
                             .transition(.asymmetric(
                                 insertion: .opacity.animation(.easeInOut(duration: 0.1)),
@@ -105,9 +107,7 @@ struct HomeView: View {
         TabView {
             ForEach(featuredCourses) { course in
                 GeometryReader { proxy in
-                    
                     let minX = proxy.frame(in: .global).minX
-                    
                     FeaturedItem(course: course)
                         .padding(.vertical, 40)
                         .rotation3DEffect(.degrees(minX / -10), axis: (x: 0, y: 1, z: 0))
@@ -121,6 +121,10 @@ struct HomeView: View {
                                 .offset(x: 32, y: -80)
                                 .offset(x: minX / 2)
                         }
+                        .onTapGesture {
+                            selectedFeaturedCourse = course
+                            showFeaturedCourse = true
+                        }
                 }
             }
         }
@@ -130,6 +134,9 @@ struct HomeView: View {
             Image("Blob 1")
                 .offset(x: 250, y: -100)
         )
+        .sheet(isPresented: $showFeaturedCourse) {
+            CourseDetaileView(namespace: namespace, course: $selectedFeaturedCourse, show: $showFeaturedCourse)
+        }
     }
 }
 

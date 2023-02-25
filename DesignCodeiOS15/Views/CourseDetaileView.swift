@@ -9,8 +9,9 @@ import SwiftUI
 
 struct CourseDetaileView: View {
     var namespace: Namespace.ID
-    var course: Course = courses[0]
+    @Binding var course: Course
     @Binding var show: Bool
+    
     @State var appear = [false, false, false]
     @EnvironmentObject var model: Model
     @State var viewState: CGSize = .zero
@@ -27,6 +28,7 @@ struct CourseDetaileView: View {
                     .padding(.bottom, 200)
                     .opacity(appear[2] ? 1 : 0)
             }
+            .coordinateSpace(name: "scroll")
             .background(Color("Background"))
             .mask({
                 RoundedRectangle(cornerRadius: viewState.width / 3, style: .continuous)
@@ -50,7 +52,7 @@ struct CourseDetaileView: View {
     
     var cover: some View {
         GeometryReader { proxy in
-            let scrollY = proxy.frame(in: .global).minY
+            let scrollY = proxy.frame(in: .named("scroll")).minY
             
             VStack {
                 Spacer()
@@ -218,7 +220,7 @@ struct CourseDetaoleView_Previews: PreviewProvider {
     @Namespace static var namespace
     
     static var previews: some View {
-        CourseDetaileView(namespace: namespace, show: .constant(true))
+        CourseDetaileView(namespace: namespace, course: .constant(courses[0]), show: .constant(true))
             .environmentObject(Model())
     }
 }
