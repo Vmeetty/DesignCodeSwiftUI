@@ -25,6 +25,26 @@ struct SignUpView: View {
             .buttonStyle(.angular)
             .tint(.accentColor)
             .controlSize(.large)
+            Group {
+                Text("By clicking on ")
+                + Text("_Create account_")
+                + Text(", you agree to our __[Terms of Service](https://google.com)__ and **[Privacy Policy](https://google.com)**")
+                
+                Divider()
+                
+                HStack {
+                    Text("Already have an account?")
+                    Button {
+                        
+                    } label: {
+                        Text("**Sign in**")
+                    }
+                }
+            }
+            .font(.footnote)
+            .foregroundColor(.secondary)
+            .tint(.secondary)
+            
         }
         .padding(20)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 30, style: .continuous))
