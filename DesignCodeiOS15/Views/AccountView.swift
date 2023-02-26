@@ -12,6 +12,7 @@ struct AccountView: View {
     @State var webIsDeleted = false
     @State var youtubeIsDeleted = false
     @Environment(\.dismiss) var dismiss
+    @AppStorage("isLogged") var isLogged = true
     
     var body: some View {
         NavigationView {
@@ -19,17 +20,23 @@ struct AccountView: View {
                 profile
                 menu
                 links
+                Button {
+                    isLogged = false
+                    dismiss()
+                } label: {
+                    Text("Sign out")
+                }
+                .tint(.red)
             }
             .listStyle(.insetGrouped)
             .navigationTitle("Account")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        dismiss.callAsFunction()
+                        dismiss()
                     } label: {
                         Text("Done")
                     }
-
                 }
             }
         }
