@@ -116,9 +116,7 @@
 				8403443D29902FAC00153A6F /* MatchedView.swift */,
 				8403444D299249D100153A6F /* SearchView.swift */,
 				840344432990F2C400153A6F /* CourseDetaileView.swift */,
-				84C4F88D29AA71CD0076FBBC /* SignUpView.swift */,
-				84EEC8D429AB5E8600A6C547 /* SignInView.swift */,
-				84EEC8D229AB5DB100A6C547 /* ModalView.swift */,
+				84EEC8D629AB67E000A6C547 /* Modals */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +194,16 @@
 				840344472991062200153A6F /* Animation + Extension.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		84EEC8D629AB67E000A6C547 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				84C4F88D29AA71CD0076FBBC /* SignUpView.swift */,
+				84EEC8D429AB5E8600A6C547 /* SignInView.swift */,
+				84EEC8D229AB5DB100A6C547 /* ModalView.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
