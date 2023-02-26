@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StrokeStyle: ViewModifier {
+struct StrokeModifire: ViewModifier {
     @Environment(\.colorScheme) var colorScheme
     var cornerRadius: CGFloat
     

@@ -13,6 +13,19 @@ struct AccountView: View {
     @State var youtubeIsDeleted = false
     @Environment(\.dismiss) var dismiss
     @AppStorage("isLogged") var isLogged = true
+    @State var addressModel = AddressModel(id: 1, country: "UA")
+    @ObservedObject var coinViewModel = CoinViewModel()
+    
+    func fetchAddres() async {
+        do {
+            if let url = URL(string: "https://random-data-api.com/api/address/random_address") {
+                let (data, _) = try await URLSession.shared.data(from: url)
+                addressModel = try JSONDecoder().decode(AddressModel.self, from: data)
+            }
+        } catch {
+            // Show errors
+        }
+    }
     
     var body: some View {
         NavigationView {
@@ -20,6 +33,7 @@ struct AccountView: View {
                 profile
                 menu
                 links
+                coins
                 Button {
                     isLogged = false
                     dismiss()
@@ -38,6 +52,14 @@ struct AccountView: View {
                         Text("Done")
                     }
                 }
+            }
+            .task {
+                await fetchAddres()
+                await coinViewModel.fetchCoins()
+            }
+            .refreshable {
+                await fetchAddres()
+                await coinViewModel.fetchCoins()
             }
         }
     }
@@ -62,7 +84,7 @@ struct AccountView: View {
                 Image(systemName: "location")
                     .imageScale(.small)
                     .foregroundColor(.secondary)
-                Text("Ukraine")
+                Text(addressModel.country)
                     .foregroundColor(.secondary)
             }
         }
@@ -134,6 +156,37 @@ struct AccountView: View {
         }
         .listRowSeparator(.hidden)
         .foregroundColor(.primary)
+    }
+    
+    var coins: some View {
+        Section {
+            ForEach(coinViewModel.coins) { coin in
+                HStack {
+                    AsyncImage(url: URL(string: coin.logo)) { phase in
+                        switch phase {
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        case .empty:
+                            ProgressView()
+                        case .failure(_):
+                            Color.gray
+                        @unknown default:
+                            EmptyView()
+                        }
+                    }
+                    .frame(width: 32, height: 32)
+                    
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(coin.coin_name)
+                        Text(coin.acronym)
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
+        }
     }
 }
 

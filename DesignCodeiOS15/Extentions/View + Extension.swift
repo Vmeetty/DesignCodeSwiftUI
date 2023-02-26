@@ -9,7 +9,7 @@ import SwiftUI
 
 extension View {
     func strokeStyle(cornerRadius: CGFloat = 30.0) -> some View {
-        modifier(StrokeStyle(cornerRadius: cornerRadius))
+        modifier(StrokeModifire(cornerRadius: cornerRadius))
     }
 }
 

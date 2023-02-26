@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AvatarView: View {
-    @AppStorage("isLogged") var isLogged = true
+    @AppStorage("isLogged") var isLogged = false
     
     var body: some View {
         Group {
