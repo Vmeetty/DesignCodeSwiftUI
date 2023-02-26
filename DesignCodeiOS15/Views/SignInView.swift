@@ -1,14 +1,13 @@
 //
-//  SignUpView.swift
+//  SignInView.swift
 //  DesignCodeiOS15
 //
-//  Created by admin on 2/25/23.
+//  Created by admin on 2/26/23.
 //
 
 import SwiftUI
 
-struct SignUpView: View {
-    
+struct SignInView: View {
     enum Field {
         case email
         case password
@@ -26,7 +25,7 @@ struct SignUpView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text("Sign up")
+            Text("Sign in")
                 .font(.largeTitle).bold()
             Text("Access 120+ hours of courses, tutorials and livestreams")
                 .font(.headline)
@@ -65,18 +64,14 @@ struct SignUpView: View {
             .controlSize(.large)
             
             Group {
-                Text("By clicking on ")
-                + Text("_Create account_")
-                + Text(", you agree to our __[Terms of Service](https://google.com)__ and **[Privacy Policy](https://google.com)**")
-                
                 Divider()
                 
                 HStack {
-                    Text("Already have an account?")
+                    Text("No account yet?")
                     Button {
-                        model.selectedModalView = .signIn
+                        model.selectedModalView = .signUp
                     } label: {
-                        Text("**Sign in**")
+                        Text("**Sign up**")
                     }
                 }
             }
@@ -116,9 +111,9 @@ struct SignUpView: View {
     }
 }
 
-struct SignUpView_Previews: PreviewProvider {
+struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        SignUpView()
+        SignInView()
             .environmentObject(Model())
     }
 }

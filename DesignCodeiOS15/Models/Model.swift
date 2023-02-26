@@ -9,4 +9,10 @@ import Foundation
 
 class Model: ObservableObject {
     @Published var showDetail = false
+    @Published var selectedModalView: ModalEnum = .signIn
+}
+
+enum ModalEnum: String {
+    case signIn
+    case signUp
 }

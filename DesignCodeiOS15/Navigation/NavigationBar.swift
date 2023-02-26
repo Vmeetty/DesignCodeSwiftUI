@@ -45,7 +45,6 @@ struct NavigationBar: View {
                     withAnimation {
                         showModal = true
                     }
-//                    showAccount = true
                 } label: {
                     AvatarView()
                 }
