@@ -29,10 +29,7 @@ struct HomeView: View {
                 featured
                 
                 Text("courses".uppercased())
-                    .font(.footnote.weight(.semibold))
-                    .foregroundColor(.secondary)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 20)
+                    .titleStyle()
                 
                 if !show {
                     ForEach(courses) { course in
