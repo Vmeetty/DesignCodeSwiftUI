@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CircularView: View {
     var value: CGFloat = 0.2
+    var lineWidth: CGFloat = 4
     @State var appeare = false
     
     var body: some View {

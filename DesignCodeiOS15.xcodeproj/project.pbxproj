@@ -34,6 +34,10 @@
 		84216DF6298E70A50040D80E /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DF5298E70A50040D80E /* Styles.swift */; };
 		84216DF9298E74040040D80E /* View + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DF8298E74040040D80E /* View + Extension.swift */; };
 		84216DFB298E9EB40040D80E /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84216DFA298E9EB40040D80E /* AccountView.swift */; };
+		8482290529AE16A2001F5BD9 /* PlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482290429AE16A2001F5BD9 /* PlayView.swift */; };
+		8482290829AE18D3001F5BD9 /* PlayShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482290729AE18D3001F5BD9 /* PlayShape.swift */; };
+		8482290A29AE1D6C001F5BD9 /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482290929AE1D6C001F5BD9 /* ExploreView.swift */; };
+		8482290C29AE208D001F5BD9 /* SmallCourseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8482290B29AE208D001F5BD9 /* SmallCourseItem.swift */; };
 		8489473B29ABE8480040ACB2 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489473A29ABE8480040ACB2 /* CircularView.swift */; };
 		8489473D29ABEB110040ACB2 /* CourseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489473C29ABEB110040ACB2 /* CourseSection.swift */; };
 		8489473F29ABEB9A0040ACB2 /* SectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489473E29ABEB9A0040ACB2 /* SectionRow.swift */; };
@@ -76,6 +80,10 @@
 		84216DF5298E70A50040D80E /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		84216DF8298E74040040D80E /* View + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + Extension.swift"; sourceTree = "<group>"; };
 		84216DFA298E9EB40040D80E /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		8482290429AE16A2001F5BD9 /* PlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayView.swift; sourceTree = "<group>"; };
+		8482290729AE18D3001F5BD9 /* PlayShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayShape.swift; sourceTree = "<group>"; };
+		8482290929AE1D6C001F5BD9 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		8482290B29AE208D001F5BD9 /* SmallCourseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCourseItem.swift; sourceTree = "<group>"; };
 		8489473A29ABE8480040ACB2 /* CircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		8489473C29ABEB110040ACB2 /* CourseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseSection.swift; sourceTree = "<group>"; };
 		8489473E29ABEB9A0040ACB2 /* SectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionRow.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				8403442D298FDD4B00153A6F /* HomeView.swift */,
+				8482290929AE1D6C001F5BD9 /* ExploreView.swift */,
 				84216DFA298E9EB40040D80E /* AccountView.swift */,
 				8403443D29902FAC00153A6F /* MatchedView.swift */,
 				8403444D299249D100153A6F /* SearchView.swift */,
@@ -149,6 +158,8 @@
 				840344412990F1CC00153A6F /* CourseItem.swift */,
 				8489473A29ABE8480040ACB2 /* CircularView.swift */,
 				8489473E29ABEB9A0040ACB2 /* SectionRow.swift */,
+				8482290429AE16A2001F5BD9 /* PlayView.swift */,
+				8482290B29AE208D001F5BD9 /* SmallCourseItem.swift */,
 			);
 			name = Components;
 			path = ..;
@@ -157,6 +168,7 @@
 		84034432298FDFDA00153A6F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8482290629AE18A5001F5BD9 /* CustomElements */,
 				84216DF5298E70A50040D80E /* Styles.swift */,
 				84C4F88F29AAA1930076FBBC /* InputStyle.swift */,
 				8403442B298FCFE800153A6F /* TabItemPreferenceKey.swift */,
@@ -215,6 +227,14 @@
 				840344472991062200153A6F /* Animation + Extension.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		8482290629AE18A5001F5BD9 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				8482290729AE18D3001F5BD9 /* PlayShape.swift */,
+			);
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 		84EEC8D629AB67E000A6C547 /* Modals */ = {
@@ -306,20 +326,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				84034427298EEF9900153A6F /* TabBar.swift in Sources */,
+				8482290C29AE208D001F5BD9 /* SmallCourseItem.swift in Sources */,
 				84216DFB298E9EB40040D80E /* AccountView.swift in Sources */,
 				8403442A298EF98F00153A6F /* TabBarItemModel.swift in Sources */,
 				84EEC8DF29ABC95D00A6C547 /* CoinViewModel.swift in Sources */,
 				84034423298EB5D100153A6F /* HexagonView.swift in Sources */,
 				8403444E299249D100153A6F /* SearchView.swift in Sources */,
 				8403442C298FCFE800153A6F /* TabItemPreferenceKey.swift in Sources */,
+				8482290A29AE1D6C001F5BD9 /* ExploreView.swift in Sources */,
 				8403443C2990205D00153A6F /* Course.swift in Sources */,
 				84216DCD298D8EB10040D80E /* ContentView.swift in Sources */,
 				84EEC8D529AB5E8600A6C547 /* SignInView.swift in Sources */,
 				84C4F88E29AA71CD0076FBBC /* SignUpView.swift in Sources */,
 				8403443E29902FAC00153A6F /* MatchedView.swift in Sources */,
 				8403444029905F9000153A6F /* AvatarView.swift in Sources */,
+				8482290829AE18D3001F5BD9 /* PlayShape.swift in Sources */,
 				84C4F89029AAA1930076FBBC /* InputStyle.swift in Sources */,
 				84034425298EBFFE00153A6F /* BlobView.swift in Sources */,
+				8482290529AE16A2001F5BD9 /* PlayView.swift in Sources */,
 				84EEC8DA29ABC4F500A6C547 /* AddressModel.swift in Sources */,
 				840344442990F2C400153A6F /* CourseDetaileView.swift in Sources */,
 				84034438299005D200153A6F /* PreferenceKeys.swift in Sources */,
